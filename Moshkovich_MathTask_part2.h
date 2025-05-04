@@ -3,7 +3,6 @@
 #include <string>
 #include <iostream>
 using namespace std;
-
 bool UserInput(string input) {
     //если строка пустая - ввод некорректен
     if (input.empty()) return false;
@@ -20,7 +19,6 @@ bool UserInput(string input) {
     return true;
 }
 //вспомогательная функция для ввода целых чисел
-
 void EnterNumber(int& varLink, string label) {
     string raw_input;
     cout << label << " = ";
@@ -31,7 +29,6 @@ void EnterNumber(int& varLink, string label) {
     }
     varLink = stoi(raw_input);
 };
-
 bool UserInputDbl(string input) {
     //если строка пустая - ввод некорректен
     if (input.empty()) return false;
@@ -62,7 +59,6 @@ void EnterString(string& varLink, string label) {
     cout << label << " = ";
     getline(cin, varLink);
 };
-
 void EnterNumberX() {
     int X;
     EnterNumber(X, "Введите натуральное число: ");
