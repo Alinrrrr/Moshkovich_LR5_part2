@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 using namespace std;
+int X,Z;
 bool UserInput(string input) {
     //если строка пустая - ввод некорректен
     if (input.empty()) return false;
@@ -29,38 +30,8 @@ void EnterNumber(int& varLink, string label) {
     }
     varLink = stoi(raw_input);
 };
-bool UserInputDbl(string input) {
-    //если строка пустая - ввод некорректен
-    if (input.empty()) return false;
-    //попытаться
-    try {
-        //преобразование введенного значения в тип int
-        int number = stod(input);
-        if (number < 0) return false;
-    }
-    catch (...) //если возникла ошибка в блоке try
-    {
-        return false;
-    }
-    return true;
-}
-//вспомогательная функция для ввода целых чисел
-void EnterDouble(double& varLink, string label) {
-    string raw_input;
-    cout << label << " = ";
-    getline(cin, raw_input);
-    while (!UserInputDbl(raw_input)) {
-        cout << label << " = ";
-        getline(cin, raw_input);
-    }
-    varLink = stod(raw_input);
-};
-void EnterString(string& varLink, string label) {
-    cout << label << " = ";
-    getline(cin, varLink);
-};
+
 void EnterNumberX() {
-    int X;
     EnterNumber(X, "Введите натуральное число: ");
     if (X == int(X) && X > 0) {
         cout << "Число " << X << " натуральное!\n";
@@ -71,7 +42,6 @@ void EnterNumberX() {
     cout << endl;
 }
 void EnterCalcNumber() {
-    int X, Z;
     EnterNumber(X, "Введите натуральное число: ");
     if (X == int(X) && X > 0) {
         int chislo = 0;
@@ -93,7 +63,6 @@ void EnterCalcNumber() {
     }
 }
 void EnterNumberKonec() {
-    int X;
     EnterNumber(X, "Введите натуральное число: ");
     if (X == int(X) && X > 0) {
         if ((X % 10) % 2 != 0) {
